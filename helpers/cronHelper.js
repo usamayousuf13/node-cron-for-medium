@@ -111,24 +111,24 @@ module.exports = {
   // send email at scheduled interval to the given email address
   async sendEmail(emailAddress) {
     console.log("sending email to ", emailAddress);
-    // const transporter = nodemailer.createTransport({
-    //   service: "gmail",
-    //   auth: {
-    //     user: "yourEmailAddress@gmail.com",
-    //     pass: "yourSecretPassword"
-    //   }
-    // });
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: "yourEmailAddress@gmail.com",
+        pass: "yourSecretPassword"
+      }
+    });
 
-    // const mailOptions = {
-    //   from: "yourEmailAddress@gmail.com", // sender address
-    //   to: emailAddress, // list of receivers
-    //   subject: "Scheduled Magazine !!!", // Subject line
-    //   html: "<p>Greetings from Awlo Fashion Magazine</p>" // plain text body
-    // };
+    const mailOptions = {
+      from: "yourEmailAddress@gmail.com", // sender address
+      to: emailAddress, // list of receivers
+      subject: "Scheduled Magazine !!!", // Subject line
+      html: "<p>Greetings from Awlo Fashion Magazine</p>" // plain text body
+    };
 
-    // transporter.sendMail(mailOptions, (err, info) => {
-    //   if (err) console.log(err);
-    //   else console.log(info);
-    // });
+    transporter.sendMail(mailOptions, (err, info) => {
+      if (err) console.log(err);
+      else console.log(info);
+    });
   }
 };
