@@ -1,38 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
+
 <body>
 
-<div class="container">
-    <h2>Enter Your Email Address </h2>
+    <div class="container">
+        <h1 style="color: rebeccapurple; text-align: center"> SUBSCRIBE TO AWLO MAGAZINE </h1>
+        <h3 style="margin-top: 50px">Enter Your Email Address </h3>
 
-    <div>
-        <form method="POST" action="schedule">
-            <div class="form-group">
-                <label for="email">Email address:</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="enter your email">
-            </div>
-            <h2>Select Your Interval </h2>
+        <div>
+            <form method="POST" action="schedule">
+                <div class="form-group">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="enter your email"
+                        required>
+                </div>
+                <h3>Select Your Interval </h3>
 
-            <div class="form-group">
-                <label for="sel1">Select list:</label>
-                <select class="form-control" id="interval" name="interval">
-                    <option value="unsubscribe"> Off </option>
-                    <option value="hourly">Hourly</option>
-                    <option value="daily">Daily</option>
-                    <option value="weekly">Weekly</option>
-                </select>
-            </div>
-
-            <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+                <div class="form-group">
+                    <select class="form-control" id="interval" name="interval">
+                        <option value="unsubscribe"> unsubscribe </option>
+                        <option value="hourly">Hourly</option>
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                    </select>
+                </div>
+                <div style="text-align: center">
+                    <button type="submit" style="text-align: center" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
 </body>
+
 </html>

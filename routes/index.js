@@ -1,22 +1,23 @@
 const express = require("express");
 const router = express.Router();
 const helper = require("../helpers/cronHelper");
+
 /* GET home page. */
 router.get("/", async (req, res) => {
-  res.render("index", { title: "Express" });
+  res.render("index", { title: "Awlo Magazine" });
 });
 
 router.post("/schedule", async (req, res) => {
+  // grab email address that customer entered and the interval selected
   const { email, interval } = req.body;
-  console.log("email & interval ", email, interval);
 
-  console.log("stopping previous monitoring .... ");
+  //stopping previous schedules if exist
   await helper.stopMonitoring(email);
 
-  console.log("adding new schedule to database .... ");
-
+  // adds new schedule to database ....
   await helper.addNewSchedule(email, interval);
-  console.log("starting monitoring for new schedule .... ");
+
+  // if selected interval is not to unsubscrive then start monitoring for new schedule
   if (interval != "unsubscribe") await helper.startMonitoring(email, interval);
 
   res.render("success", {
